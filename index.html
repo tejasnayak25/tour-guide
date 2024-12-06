@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/uicons-solid-rounded/css/uicons-solid-rounded.css">
+
+    <style>
+        @font-face {
+            font-family: "Pirata";
+            src: url("./images/PirataOne-Regular.ttf");
+        }
+
+        .lobster {
+            font-family: "Pirata";
+        }
+    </style>
+</head>
+<body class="flex flex-col">
+    <div id="main" class="h-full p-4 z-[48] flex justify-center flex-wrap w-full">
+        <div class="flex justify-center items-center w-full h-full">
+            <img src="./images/home.jpg" class=" object-cover opacity-50 absolute top-0 w-full h-full">
+            <p id="title" class="text-9xl lobster tracking-widest text-slate-100" style="filter: drop-shadow(0 0 6px white);">Bhramara</p>
+        </div>
+    </div>
+
+    <div class=" fixed z-50 bottom-20 right-5 flex gap-2">
+        <button id="curLoc" data-tooltip-target="tooltip-new" type="button" class="inline-flex items-center justify-center outline-0 focus:outline-0 active:outline-0 w-14 h-14 font-medium bg-slate-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+            <i class=" fi fi-sr-location-crosshairs text-white text-2xl"></i>
+            <span class="sr-only">Location</span>
+        </button>
+    </div>
+
+    <div id="nav" class="w-full absolute top-0 h-full">
+        <div class=" fixed z-[49] w-full bottom-0 md:h-64 h-32 bg-gradient-to-t pointer-events-none from-black to-transparent"></div>
+        <div class="fixed z-50 w-full md:h-14 h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 md:rounded-t-full rounded-t-3xl md:rounded-b-full rounded-b-none md:bottom-4 bottom-0 left-1/2 dark:bg-gray-700 dark:border-gray-600">
+            <div class="grid h-full max-w-lg grid-cols-5 mx-auto text-slate-800 text-lg">
+                <a href="/" data-tooltip-target="tooltip-home" type="button" class="hover:text-blue-700 inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                    <i class=" fi fi-sr-home text-xl"></i>
+                    <span class="sr-only">Home</span>
+                </a>
+                <div id="tooltip-home" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Home
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <a href="/?page=places" data-tooltip-target="tooltip-wallet" type="button" class="hover:text-blue-700 inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                    <i class=" fi fi-sr-location-arrow text-xl"></i>
+                    <span class="sr-only">Places</span>
+                </a>
+                <div id="tooltip-wallet" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Wallet
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <div class="flex items-center justify-center -mt-10">
+                    <a href="/?page=create" data-tooltip-target="tooltip-new" type="button" class="inline-flex items-center justify-center outline-0 focus:outline-0 active:outline-0 w-16 h-16 border-4 border-white font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+                        <i class=" fi fi-sr-plus text-white text-xl"></i>
+                        <span class="sr-only">New item</span>
+                    </a>
+                </div>
+                <div id="tooltip-new" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Create new item
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <button data-tooltip-target="tooltip-settings" type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                    <i class=" fi fi-sr-sandwich text-xl"></i>
+                    <span class="sr-only">Settings</span>
+                </button>
+                <div id="tooltip-settings" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Settings
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <button data-tooltip-target="tooltip-profile" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                    <i class=" fi fi-sr-user text-xl"></i>
+                    <span class="sr-only">Profile</span>
+                </button>
+                <div id="tooltip-profile" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Profile
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/anime.min.js"></script>
+<script src="./js/place.js"></script>
+<script src="./js/renderPlaces.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/form.js"></script>
+<script src="./js/router.js"></script>
+<script src="./js/curLoc.js"></script>
+</body>
+</html>
