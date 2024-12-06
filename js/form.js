@@ -22,7 +22,7 @@ function foodForm() {
                             <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                             <p class="text-xs text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                         </div>
-                        <input id="dropzone-file" type="file" accept="image/*" multiple class="hidden" />
+                        <input id="dropzone-file" type="file" accept="image/*" class="hidden" />
                     </label>
                 </div>
             </div> 
@@ -39,8 +39,8 @@ function foodForm() {
                 <input type="text" id="loc" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" value="Current Location" disabled />
             </div>
             <div class="mb-6">
-                <label for="description" class="block mb-2 text-sm font-medium text-white">Your message</label>
-                <textarea id="description" rows="4" class="block p-2.5 w-full text-sm rounded-lg border focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                <label for="description" class="block mb-2 text-sm font-medium text-white">Description</label>
+                <textarea id="description" rows="4" class="block p-2.5 w-full text-sm rounded-lg border focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Describe the place here..."></textarea>
             </div>
             
             <div class="flex items-start justify-center mb-6">
@@ -85,6 +85,7 @@ function foodForm() {
     let closethank = document.getElementById("close-thank");
     closethank.onclick = () => {
         thank.classList.replace("flex", "hidden");
+        location.reload();
     }
 
     mainTag.querySelector("#submit-btn").onclick = () => {
@@ -104,6 +105,7 @@ function foodForm() {
                     name, description, images, location
                 })
             }).then((data) => {
+                gallery.innerHTML = "";
                 thank.classList.replace("hidden", "flex");
             });
         });

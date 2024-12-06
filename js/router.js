@@ -14,7 +14,7 @@ if(page === "home") {
 
     var textWrapper = document.querySelector('#title');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    
+
     anime({
         targets: '#title .letter',
         opacity: [0,1],
